@@ -36,12 +36,11 @@
     "dist"
   ],
   "types": "./dist/types/index.d.ts",
-  "module": "./dist/my-lib.es.js",
+  "module": "./dist/vue-animate-css-grid.es.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+      "import": "./dist/vue-animate-css-grid.es.js"
+    }
   },
   "author": "Oak Digital (https://oakdigital.dk)",
   "homepage": "https://github.com/Oak-Digital/vue-animate-css-grid#readme",
