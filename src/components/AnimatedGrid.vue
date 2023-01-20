@@ -1,17 +1,19 @@
-<script lang="ts" setup>
-import { AnimateCSSGrid, PopmotionEasing, AnimateCSSGridEvents } from '@oak-digital/animate-css-grid-2';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-
+<script lang="ts">
 const eventNames = [
-    AnimateCSSGridEvents.START,
-    AnimateCSSGridEvents.END,
-    AnimateCSSGridEvents.BEFORE_DESTROY,
-    AnimateCSSGridEvents.AFTER_DESTROY,
-    AnimateCSSGridEvents.ITEM_START,
-    AnimateCSSGridEvents.ITEM_END,
-    AnimateCSSGridEvents.ITEM_BEFORE_DESTROY,
-    AnimateCSSGridEvents.ITEM_AFTER_DESTROY,
-];
+    'start',
+    'end',
+    'beforeDestroy',
+    'afterDestroy',
+    'itemStart',
+    'itemEnd',
+    'itemBeforeDestroy',
+    'itemAfterDestroy',
+] as any[];
+</script>
+
+<script lang="ts" setup>
+import { AnimateCSSGrid, PopmotionEasing } from '@oak-digital/animate-css-grid-2';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const emit = defineEmits(eventNames);
 
