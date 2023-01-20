@@ -15,7 +15,11 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
     "@vitejs/plugin-vue": "^4.0.0",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primevue": "^3.22.3",

@@ -1,0 +1,6 @@
+node_modules
+src
+.gitignore
+.prettierrc.yaml
+.prettierignore
+*.log
