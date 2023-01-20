@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.demo-container {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    gap: 15px;
+}
+
+.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}

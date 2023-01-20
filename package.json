@@ -19,6 +19,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.32.0",
+    "eslint-plugin-vue": "^9.9.0",
     "prettier": "^2.8.3",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
@@ -55,5 +56,8 @@
     "animate",
     "css",
     "grid"
-  ]
+  ],
+  "dependencies": {
+    "@oak-digital/animate-css-grid-2": "^2.0.1"
+  }
 }
