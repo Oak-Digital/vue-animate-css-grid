@@ -10,8 +10,8 @@ const emit = defineEmits(eventNames);
 
 const props = withDefaults(
     defineProps<{
-        extracted: boolean;
-        extractBeforeUnmount: boolean;
+        extracted?: boolean;
+        extractBeforeUnmount?: boolean;
     }>(),
     {
         extracted: false,
@@ -59,6 +59,7 @@ onBeforeUnmount(() => {
 });
 
 onDeactivated(() => {
+    animatedGrid.unregisterGridItem(gridItem);
     gridItem.destroy();
 });
 </script>
