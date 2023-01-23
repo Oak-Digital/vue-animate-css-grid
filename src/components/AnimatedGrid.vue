@@ -13,37 +13,43 @@ const eventNames = [
 
 <script lang="ts" setup>
 import { AnimateCSSGrid, PopmotionEasing } from '@oak-digital/animate-css-grid-2';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, provide } from 'vue';
 
 const emit = defineEmits(eventNames);
 
-const props = defineProps<{
-    duration: number;
-    easing: keyof PopmotionEasing;
-    stagger: number;
-}>();
+const props = withDefaults(
+    defineProps<{
+        duration?: number;
+        easing?: keyof PopmotionEasing;
+        stagger?: number;
+        autoRegister?: boolean;
+    }>(),
+    {
+        autoRegister: false,
+    }
+);
 
 const gridElement = ref<HTMLElement | null>(null);
-const grid = ref<AnimateCSSGrid>();
+const grid = new AnimateCSSGrid(undefined, {
+    duration: props.duration,
+    easing: props.easing,
+    stagger: props.stagger,
+    autoRegisterChildren: props.autoRegister,
+});
+
+eventNames.forEach((eventName) => {
+    grid.on(eventName, (...data) => {
+        emit(eventName, ...data);
+    });
+});
+provide('animatedGrid', grid);
 
 onMounted(() => {
-    const animatedGrid = new AnimateCSSGrid(gridElement.value!, {
-        duration: props.duration,
-        easing: props.easing,
-        stagger: props.stagger,
-    });
-
-    eventNames.forEach((eventName) => {
-        animatedGrid.on(eventName, (...data) => {
-            emit(eventName, ...data);
-        });
-    });
-
-    grid.value = animatedGrid;
+    grid.registerElement(gridElement.value!);
 });
 
 onBeforeUnmount(() => {
-    grid.value?.destroy();
+    grid.destroy();
 });
 </script>
 

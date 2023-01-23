@@ -21,6 +21,22 @@
     gap: 15px;
 }
 
+.cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
 .cols-3 {
     grid-template-columns: repeat(3, 1fr);
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1.5s;
+}
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+    opacity: 1;
 }

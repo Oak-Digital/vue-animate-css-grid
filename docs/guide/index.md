@@ -23,7 +23,7 @@ import { AnimatedGrid } from '@oak-digital/vue-animated-css-grid';
 </script>
 
 <template>
-    <AnimatedGrid :duration="200" :stagger="20">
+    <AnimatedGrid :duration="200" :stagger="20" auto-register>
         <div>
             <div>
                 Hello world
