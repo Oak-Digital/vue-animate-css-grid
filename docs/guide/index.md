@@ -38,7 +38,7 @@ import { AnimatedGrid } from '@oak-digital/vue-animated-css-grid';
 </template>
 ```
 
-See other examples in [Animated Grid](../components/animate-grid.md)
+See other examples in [Animated Grid](../components/animated-grid.md)
 
 ## Other notes
 
